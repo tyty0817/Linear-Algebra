@@ -41,8 +41,10 @@ public class RREF_Solver {
         for(int i = 0; i < matrix.length - 1; i++){
             for(int j = i + 1; j < matrix.length; j++){
                 double diff = matrix[j][i] / matrix[i][i];
-                for(int k = i; k < matrix.length; k++){
-                    matrix[j][k]-=(matrix[i][k] * diff);;
+                if(diff != 0){
+                    for(int k = i; k < matrix.length; k++){
+                        matrix[j][k]-=(matrix[i][k] * diff);;
+                    }
                 }
                 ans[j]-=(ans[i] * diff);
             }
@@ -51,8 +53,10 @@ public class RREF_Solver {
         for(int i = matrix.length - 1; i > 0; i--){
             for(int j = i - 1; j >= 0; j--){
                 double diff = matrix[j][i] / matrix[i][i];
-                for(int k = 0; k < matrix.length; k++){
-                    matrix[j][k]-=(matrix[i][k] * diff);;
+                if(diff != 0){
+                    for(int k = 0; k < matrix.length; k++){
+                        matrix[j][k]-=(matrix[i][k] * diff);;
+                    }
                 }
                 ans[j]-=(ans[i] * diff);
             }
