@@ -6,7 +6,7 @@ public class RREF_Solver {
         long startTime = System.nanoTime();
         ans = RREF(matrix, ans);
         long endTime = System.nanoTime();long executionTime = (endTime - startTime);
-        System.out.println("time elapsed " + executionTime + "ns");
+        System.out.println("time elapsed " + executionTime/1000000000 + "." + executionTime%1000000000);
     }
 
     public static double[][] createRandomMatrix(int rows, int columns, int min, int max){
